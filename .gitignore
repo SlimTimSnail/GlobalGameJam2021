@@ -69,3 +69,6 @@ Assets/StreamingAssets.meta
 *.unsaved
 *.cache
 .vsconfig
+
+#Mac specific files
+.DS_Store

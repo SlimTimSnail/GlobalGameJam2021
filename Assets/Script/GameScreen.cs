@@ -7,19 +7,32 @@ using UnityEngine.Video;
 
 public class GameScreen : MonoBehaviour
 {
-	[SerializeField]
-	private VideoPlayer m_videoPlayer = null;
+	public VideoPlayer ObjectVideo = null;
+    public VideoPlayer LoserVideo = null;
 
 	public LostObject CurrentSelected = null;
     public List<LostObject> LostObjects = null;
     public Button SubmitButton = null;
     public Button ReturnButton = null;
 
+    public LoserDefinition Loser = null;
+
     public static GameScreen Instance;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        if(LoserVideo != null)
+        {
+            LoserVideo.clip = Loser.Intro;
+            LoserVideo.gameObject.SetActive(true);
+            LoserVideo.Play();
+            LoserVideo.loopPointReached += PlayIdle;
+        }
     }
 
     // Update is called once per frame
@@ -42,11 +55,11 @@ public class GameScreen : MonoBehaviour
         SubmitButton.interactable = true;
         ReturnButton.interactable = true;
 
-        if (m_videoPlayer != null)
+        if (ObjectVideo != null)
 		{
-            m_videoPlayer.clip = CurrentSelected.Definition.VideoClip;
-            m_videoPlayer.gameObject.SetActive(true);
-            m_videoPlayer.Play();
+            ObjectVideo.clip = CurrentSelected.Definition.VideoClip;
+            ObjectVideo.gameObject.SetActive(true);
+            ObjectVideo.Play();
         }
     }
 
@@ -74,10 +87,30 @@ public class GameScreen : MonoBehaviour
         SubmitButton.interactable = false;
         ReturnButton.interactable = false;
 
-        if (m_videoPlayer != null)
+        if (ObjectVideo != null)
         {
-            m_videoPlayer.Stop();
-            m_videoPlayer.gameObject.SetActive(false);
+            ObjectVideo.Stop();
+            ObjectVideo.gameObject.SetActive(false);
+        }
+    }
+
+    public void PlayIdle(VideoPlayer vp)
+    {
+        int rand = Random.Range(0, 3);
+        switch(rand)
+        {
+            case 0:
+                LoserVideo.clip = Loser.Idle_01;
+                LoserVideo.Play();
+                break;
+            case 1:
+                LoserVideo.clip = Loser.Idle_02;
+                LoserVideo.Play();
+                break;
+            case 2:
+                LoserVideo.clip = Loser.Idle_03;
+                LoserVideo.Play();
+                break;
         }
     }
 }
