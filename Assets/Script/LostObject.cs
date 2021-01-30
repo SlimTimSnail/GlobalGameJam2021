@@ -26,12 +26,19 @@ public class LostObject : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        OnSelected += GameScreen.Instance.OnObjectSelect;
+    }
+
+    private void OnDisable()
+    {
+        OnSelected -= GameScreen.Instance.OnObjectSelect;
+    }
+
     public void OnClick()
     {
-        if (OnSelected != null)
-        {
-            OnSelected.Invoke(this);
-        }
+        OnSelected?.Invoke(this);
     }
 
     internal void Initialise(LostObjectDefinitions.LostObjectDefinition def)

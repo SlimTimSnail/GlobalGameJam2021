@@ -11,13 +11,17 @@ public class GameScreen : MonoBehaviour
     public Button SubmitButton = null;
     public Button ReturnButton = null;
 
+    public static GameScreen Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        foreach(LostObject lo in LostObjects)
-        {
-            lo.OnSelected += OnObjectSelect;
-        }
+
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class GameScreen : MonoBehaviour
         }
     }
 
-    void OnObjectSelect(LostObject lostObject)
+    public void OnObjectSelect(LostObject lostObject)
     {
         if(CurrentSelected != null)
         {
