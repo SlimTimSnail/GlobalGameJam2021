@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_Start.unity
     guid: 553e11fd69a464f4c8e67be42fc1913c
   - enabled: 1
-    path: Assets/Scenes/Scene_Rami.unity
-    guid: 2b376ae5b32bd400d9f502830f46837d
+    path: Assets/Scenes/Scene_Final.unity
+    guid: 6490b9b99328c134da2643378ae0790d
   - enabled: 1
     path: Assets/Scenes/Scene_End.unity
     guid: e154b9dc780fc4f4a9c4679ebd4dd17a
