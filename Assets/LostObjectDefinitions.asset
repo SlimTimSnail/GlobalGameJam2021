@@ -17,95 +17,95 @@ MonoBehaviour:
     Size: 2
     Colour: 3
     Category: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 7770a64ee5af59447b6a91ace0a296c2, type: 3}
     VideoClip: {fileID: 32900000, guid: 7aa07a4867dc6514490e3dde456f763e, type: 3}
   - Name: Banana
     Size: 1
     Colour: 4
     Category: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: d3e5757e3f4f32c4c9dc8ed37ca7a28c, type: 3}
     VideoClip: {fileID: 32900000, guid: 2057018885929ee44bcc98b5b6699452, type: 3}
   - Name: Mint
     Size: 0
     Colour: 0
     Category: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 6590f95cd512e134e9061d89981274b7, type: 3}
     VideoClip: {fileID: 32900000, guid: 0caa5e6b836f3264994c15aeed3d9dcf, type: 3}
   - Name: Popcorn
     Size: 1
     Colour: 2
     Category: 0
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 92e4606be61747645a90eb1588838b4f, type: 3}
     VideoClip: {fileID: 32900000, guid: 3fb7aaea0cae5ba44b23ab68c921f61d, type: 3}
   - Name: Headphones
     Size: 0
     Colour: 0
     Category: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 24b8ef6f15a25a644af1c027acd00bc9, type: 3}
     VideoClip: {fileID: 32900000, guid: 0110e086d6535484d87f4619c820f9fe, type: 3}
   - Name: Remote Control
     Size: 0
     Colour: 1
     Category: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: de09b64f53de9e947a2a8f6f3b12130c, type: 3}
     VideoClip: {fileID: 32900000, guid: 5e1784d31f10b2449bb0de6c75bef22b, type: 3}
   - Name: XBox Controller
     Size: 1
     Colour: 1
     Category: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 4b0f59cad2997084f896243103bdf09f, type: 3}
     VideoClip: {fileID: 32900000, guid: c2be3182eab7b7746aa3e86e2bf14834, type: 3}
   - Name: PlayStation Controller
     Size: 1
     Colour: 5
     Category: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 12eb54a3ca193784883674b91ec594e4, type: 3}
     VideoClip: {fileID: 32900000, guid: 2472e2131c73e9b4eba87dcdc49a50be, type: 3}
   - Name: Wrench
     Size: 1
     Colour: 6
     Category: 2
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 0cdeb2d5e9477d04f9ebe25b5d5551a1, type: 3}
     VideoClip: {fileID: 32900000, guid: 016b1853e22401645affa1b58efa00e8, type: 3}
   - Name: Flathead Screwdriver
     Size: 0
     Colour: 4
     Category: 2
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 2e30d62bf0a646a4695d43ebbcce4ca5, type: 3}
     VideoClip: {fileID: 32900000, guid: 83b920ce53714a044bebab8024c93d76, type: 3}
   - Name: Philips Head Screwdriver
     Size: 1
     Colour: 3
     Category: 2
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: c591ad7e910678b448b6364a87ddbf7c, type: 3}
     VideoClip: {fileID: 32900000, guid: cd51555e892288b48a7a045e436e109d, type: 3}
   - Name: Hammer
     Size: 1
     Colour: 6
     Category: 2
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: ec8441b9e7468924aab6af43e2784b55, type: 3}
     VideoClip: {fileID: 32900000, guid: 16279c2a12c181e4c815419d5b2af42e, type: 3}
   - Name: Penguin
     Size: 1
     Colour: 2
     Category: 3
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 97937bdcfdfd3044e91caa733b860461, type: 3}
     VideoClip: {fileID: 32900000, guid: 7f4309feac9dc4243be15a25447dd2d0, type: 3}
   - Name: Dreidel
     Size: 0
     Colour: 4
     Category: 3
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: d459e7d6c3e0e8848b449bb780ec61a7, type: 3}
     VideoClip: {fileID: 32900000, guid: 234c9e28471960549a2931e7f9a9a834, type: 3}
   - Name: Pool Triangle
     Size: 2
     Colour: 1
     Category: 3
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 2248d9a355d72f442b7eea3464e9419e, type: 3}
     VideoClip: {fileID: 32900000, guid: 9fe4e905634e2a94585098c809af6b4c, type: 3}
   - Name: Binoculars
     Size: 1
     Colour: 1
     Category: 2
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 387c228c62f0d2e40903a5c4f1d4ccbd, type: 3}
     VideoClip: {fileID: 32900000, guid: 33f6c14281c219a439420c8aecb86297, type: 3}
