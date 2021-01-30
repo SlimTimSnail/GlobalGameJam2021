@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class GameScreen : MonoBehaviour
 {
-    public LostObject CurrentSelected = null;
+	[SerializeField]
+	private VideoPlayer m_videoPlayer = null;
+
+	public LostObject CurrentSelected = null;
     public List<LostObject> LostObjects = null;
     public Button SubmitButton = null;
     public Button ReturnButton = null;
@@ -16,12 +20,6 @@ public class GameScreen : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -43,6 +41,13 @@ public class GameScreen : MonoBehaviour
         CurrentSelected.Select();
         SubmitButton.interactable = true;
         ReturnButton.interactable = true;
+
+        if (m_videoPlayer != null)
+		{
+            m_videoPlayer.clip = CurrentSelected.Definition.VideoClip;
+            m_videoPlayer.gameObject.SetActive(true);
+            m_videoPlayer.Play();
+        }
     }
 
     public void SubmitObject()
@@ -68,5 +73,11 @@ public class GameScreen : MonoBehaviour
         CurrentSelected = null;
         SubmitButton.interactable = false;
         ReturnButton.interactable = false;
+
+        if (m_videoPlayer != null)
+        {
+            m_videoPlayer.Stop();
+            m_videoPlayer.gameObject.SetActive(false);
+        }
     }
 }
