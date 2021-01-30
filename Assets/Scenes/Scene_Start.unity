@@ -315,7 +315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517, y: 127}
+  m_AnchoredPosition: {x: 0.000030517, y: 150}
   m_SizeDelta: {x: 788.9489, y: 522.3877}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &386520949
@@ -351,7 +351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HEY I LOST MY THING
+  m_Text: HEY I UH LOST MY THING
 --- !u!222 &386520950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -387,9 +387,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ddda461090cb34d38a93cfebcb5a3455, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8d75c4fd728eb4d87ad317a4bc4c337e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 1
   Mute: 0
