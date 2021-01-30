@@ -8,7 +8,7 @@ public class StartScreen : MonoBehaviour
 
     public void OnStartClick()
     {
-        Invoke("StartGame", 0.6f);
+        Invoke("StartGame", 0.4f);
     }
 
     private void StartGame()

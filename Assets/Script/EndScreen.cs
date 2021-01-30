@@ -5,20 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
-    }
-
     public void OnRestartClick()
     {
-        SceneManager.LoadScene("Scene_Start");
+        Invoke("StartGame", 0.4f);
     }
+
+    private void StartGame()
+	{
+		SceneManager.LoadScene("Scene_Final");
+	}
+
+    public void OnExitClick()
+	{
+		Invoke("ExitGame", 0.6f);
+	}
+
+    private void ExitGame()
+	{
+		Application.Quit();
+
+    #if UNITY_EDITOR
+		Debug.LogWarning("Would quit in actual game executable");
+    #endif
+	}
 }
