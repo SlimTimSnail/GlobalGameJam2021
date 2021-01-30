@@ -89,7 +89,7 @@ public class ClockLogic : MonoBehaviour
     {
         if (m_isRunning && m_rotateOverTimeCoroutine == null)
         {
-
+            m_minuteArm.Rotate(new Vector3(0f, 0f, 10f * Time.deltaTime));
         }
     }
 }
