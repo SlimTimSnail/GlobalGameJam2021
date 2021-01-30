@@ -14,7 +14,7 @@ public class LoadObjectsFromDefinitions : MonoBehaviour
     {
         foreach (var def in m_definitions)
         {
-            LostObject lostObj = GameObject.Instantiate(m_lostObjectPrefab);
+            LostObject lostObj = GameObject.Instantiate(m_lostObjectPrefab, transform);
             lostObj.Initialise(def);
         }
     }

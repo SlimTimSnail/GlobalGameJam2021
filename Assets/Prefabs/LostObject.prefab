@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctObject: 0
+  alreadySubmitted: 0
+  m_image: {fileID: 1155386732539385055}
 --- !u!114 &6501404678344186359
 MonoBehaviour:
   m_ObjectHideFlags: 0
