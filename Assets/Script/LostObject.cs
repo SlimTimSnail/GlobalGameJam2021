@@ -19,7 +19,6 @@ public class LostObject : MonoBehaviour
     private void SetSubmittedState(bool value)
     {
         m_submitted = value;
-        m_button.interactable = !value;
     }
 
     [SerializeField]
