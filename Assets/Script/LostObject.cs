@@ -33,7 +33,7 @@ public class LostObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_image.alphaHitTestMinimumThreshold = 0.001f;
     }
 
     private void OnEnable()
