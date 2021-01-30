@@ -22,4 +22,18 @@ public class StartScreen : MonoBehaviour
         SceneManager.LoadScene("Scene_Rami");
     }
 
+    public void OnExitClick()
+	{
+		Invoke("ExitGame", 0.6f);
+	}
+
+    private void ExitGame()
+	{
+		Application.Quit();
+
+    #if UNITY_EDITOR
+		Debug.LogWarning("Would quit in actual game executable");
+    #endif
+	}
+
 }
