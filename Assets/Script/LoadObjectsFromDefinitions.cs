@@ -19,7 +19,7 @@ public class LoadObjectsFromDefinitions : MonoBehaviour
     {
         foreach(var obj in m_lostObjs.ToList())
         {
-            Destroy(obj.gameObject);
+            DestroyImmediate(obj.gameObject);
             m_lostObjs.Remove(obj);
         }
         foreach (var def in m_definitions)
