@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static LostObjectDefinitions;
 
 [CreateAssetMenu(fileName = "LostObjectDefinitions", menuName = "GGJ2021/LostObjectDefinitions")]
-public class LostObjectDefinitions : ScriptableObject
+public class LostObjectDefinitions : ScriptableObject, IEnumerable<LostObjectDefinition>
 {
 	public enum Size
 	{
@@ -42,7 +43,22 @@ public class LostObjectDefinitions : ScriptableObject
 		public Colour Colour;
 
 		public Category Category;
+
+		public Sprite Sprite;
 	}
 
 	public List<LostObjectDefinition> Definitions = new List<LostObjectDefinition>();
+
+	public IEnumerator<LostObjectDefinition> GetEnumerator()
+    {
+		foreach (var def in Definitions)
+		{
+			yield return def;
+		}
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+		return GetEnumerator();
+    }
 }
