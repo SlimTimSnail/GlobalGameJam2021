@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a561ff53b381a486cb9ec3b71561dccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_videoPlayer: {fileID: 1686443966}
+  ObjectVideo: {fileID: 1686443966}
+  LoserVideo: {fileID: 0}
   CurrentSelected: {fileID: 0}
   LostObjects:
   - {fileID: 630082464}
@@ -164,6 +165,7 @@ MonoBehaviour:
   - {fileID: 1386435820}
   SubmitButton: {fileID: 836776150}
   ReturnButton: {fileID: 710655832}
+  Loser: {fileID: 0}
 --- !u!114 &8440092
 MonoBehaviour:
   m_ObjectHideFlags: 0
