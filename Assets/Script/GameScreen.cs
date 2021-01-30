@@ -51,14 +51,14 @@ public class GameScreen : MonoBehaviour
         {
             Debug.Log("Win");
         }
-        else if(CurrentSelected.alreadySubmitted == true)
+        else if(CurrentSelected.Submitted == true)
         {
             Debug.Log("I said Nope");
         }
         else
         {
             Debug.Log("Nope");
-            CurrentSelected.alreadySubmitted = true;
+            CurrentSelected.Submitted = true;
         }
     }
 

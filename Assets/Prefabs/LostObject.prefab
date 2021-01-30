@@ -51,7 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctObject: 0
-  alreadySubmitted: 0
+  m_submitted: 0
+  m_button: {fileID: 6501404678344186359}
   m_image: {fileID: 1155386732539385055}
 --- !u!114 &6501404678344186359
 MonoBehaviour:
@@ -72,7 +73,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -93,7 +94,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1155386732539385055}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

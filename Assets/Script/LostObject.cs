@@ -11,9 +11,19 @@ public class LostObject : MonoBehaviour
     public event Action<LostObject> OnSelected = null;
 
     public bool correctObject = false;
-    public bool alreadySubmitted = false;
 
+    [SerializeField]
+    private bool m_submitted = false;
+    public bool Submitted { get => m_submitted; set => SetSubmittedState(value); }
 
+    private void SetSubmittedState(bool value)
+    {
+        m_submitted = value;
+        m_button.interactable = !value;
+    }
+
+    [SerializeField]
+    private Button m_button;
 
     [SerializeField]
     private Image m_image;
