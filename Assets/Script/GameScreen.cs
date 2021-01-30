@@ -77,6 +77,8 @@ public class GameScreen : MonoBehaviour
             Debug.Log("Win");
             LoserVideo.clip = Loser.Outro;
             LoserVideo.Play();
+
+            StartCoroutine(GoToEndCoroutine());
         }
         else
 		{
@@ -212,5 +214,15 @@ public class GameScreen : MonoBehaviour
 
             CurrentSelected.WasSubmitted = true;
         }
+    }
+
+    private IEnumerator GoToEndCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        while (LoserVideo.isPlaying)
+        {
+            yield return null;
+        }
+        SceneManager.LoadScene("Scene_End");
     }
 }
