@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,20 +15,11 @@ public class LoserDefinition : ScriptableObject
     public VideoClip Idle_01;
     public VideoClip Idle_02;
     public VideoClip Idle_03;
-    
-    public VideoClip NotBlack;
-    public VideoClip NotBlue;
-    public VideoClip NotGreen;
-    public VideoClip NotPink;
-    public VideoClip NotWhite;
-    public VideoClip NotYellow;
-    public VideoClip NotSilver;
-
-    public VideoClip NotElectronic;
-    public VideoClip NotTool;
-    public VideoClip NotToy;
-    public VideoClip NotFood;
   
     public VideoClip TooBig;
     public VideoClip TooSmall;
+
+    public List<VideoClip> ColourClips;
+
+    public List<VideoClip> CategoryClips;
 }

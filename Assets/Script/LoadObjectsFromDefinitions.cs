@@ -8,6 +8,7 @@ public class LoadObjectsFromDefinitions : MonoBehaviour
 {
     [SerializeField]
     private List<LostObject> m_lostObjs;
+    public List<LostObject> LostObjects => m_lostObjs;
 
     [SerializeField]
     private LostObjectDefinitions m_definitions;

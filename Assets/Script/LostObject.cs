@@ -15,7 +15,7 @@ public class LostObject : MonoBehaviour
 
     [SerializeField]
     private bool m_submitted = false;
-    public bool Submitted { get => m_submitted; set => SetSubmittedState(value); }
+    public bool WasSubmitted { get => m_submitted; set => SetSubmittedState(value); }
 
     private void SetSubmittedState(bool value)
     {
