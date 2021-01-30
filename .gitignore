@@ -68,3 +68,4 @@ Assets/StreamingAssets.meta
 *.user
 *.unsaved
 *.cache
+.vsconfig
