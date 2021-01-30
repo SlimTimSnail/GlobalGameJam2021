@@ -17,63 +17,95 @@ MonoBehaviour:
     Size: 2
     Colour: 3
     Category: 0
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 7aa07a4867dc6514490e3dde456f763e, type: 3}
   - Name: Banana
     Size: 1
     Colour: 4
     Category: 0
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 2057018885929ee44bcc98b5b6699452, type: 3}
   - Name: Mint
     Size: 0
     Colour: 0
     Category: 0
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 0caa5e6b836f3264994c15aeed3d9dcf, type: 3}
   - Name: Popcorn
     Size: 1
     Colour: 2
     Category: 0
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 3fb7aaea0cae5ba44b23ab68c921f61d, type: 3}
   - Name: Headphones
     Size: 0
     Colour: 0
     Category: 1
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 0110e086d6535484d87f4619c820f9fe, type: 3}
   - Name: Remote Control
     Size: 0
     Colour: 1
     Category: 1
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 5e1784d31f10b2449bb0de6c75bef22b, type: 3}
   - Name: XBox Controller
     Size: 1
     Colour: 1
     Category: 1
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: c2be3182eab7b7746aa3e86e2bf14834, type: 3}
   - Name: PlayStation Controller
     Size: 1
     Colour: 5
     Category: 1
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 2472e2131c73e9b4eba87dcdc49a50be, type: 3}
   - Name: Wrench
     Size: 1
     Colour: 6
     Category: 2
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 016b1853e22401645affa1b58efa00e8, type: 3}
   - Name: Flathead Screwdriver
     Size: 0
     Colour: 4
     Category: 2
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 83b920ce53714a044bebab8024c93d76, type: 3}
   - Name: Philips Head Screwdriver
     Size: 1
     Colour: 3
     Category: 2
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: cd51555e892288b48a7a045e436e109d, type: 3}
   - Name: Hammer
     Size: 1
     Colour: 6
     Category: 2
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 16279c2a12c181e4c815419d5b2af42e, type: 3}
   - Name: Penguin
     Size: 1
     Colour: 2
     Category: 3
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 7f4309feac9dc4243be15a25447dd2d0, type: 3}
   - Name: Dreidel
     Size: 0
     Colour: 4
     Category: 3
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 234c9e28471960549a2931e7f9a9a834, type: 3}
   - Name: Pool Triangle
     Size: 2
     Colour: 1
     Category: 3
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 9fe4e905634e2a94585098c809af6b4c, type: 3}
   - Name: Binoculars
     Size: 1
     Colour: 1
     Category: 2
+    Sprite: {fileID: 0}
+    VideoClip: {fileID: 32900000, guid: 33f6c14281c219a439420c8aecb86297, type: 3}
