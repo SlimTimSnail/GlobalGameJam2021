@@ -21,6 +21,7 @@
 
 # Visual Studio cache directory
 .vs/
+.vsconfig
 
 # Gradle cache directory
 .gradle/
@@ -68,7 +69,9 @@ Assets/StreamingAssets.meta
 *.user
 *.unsaved
 *.cache
-.vsconfig
 
 #Mac specific files
 .DS_Store
+
+# User settings
+UserSettings/*
