@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class LostObject : MonoBehaviour
 {
-    private LostObjectDefinitions.LostObjectDefinition m_definition;
+    public LostObjectDefinitions.LostObjectDefinition m_definition;
+    public LostObjectDefinitions.LostObjectDefinition Definition => m_definition;
 
     public event Action<LostObject> OnSelected = null;
 
