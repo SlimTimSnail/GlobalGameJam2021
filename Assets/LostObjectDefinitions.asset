@@ -12,3 +12,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5288d5a5ec6e8904f9131c2c4ae395d2, type: 3}
   m_Name: LostObjectDefinitions
   m_EditorClassIdentifier: 
+  Definitions:
+  - Name: Watermelon
+    Size: 2
+    Colour: 3
+    Category: 0
+  - Name: Banana
+    Size: 1
+    Colour: 4
+    Category: 0
+  - Name: Mint
+    Size: 0
+    Colour: 0
+    Category: 0
+  - Name: Popcorn
+    Size: 1
+    Colour: 2
+    Category: 0
+  - Name: Headphones
+    Size: 0
+    Colour: 0
+    Category: 1
+  - Name: Remote Control
+    Size: 0
+    Colour: 1
+    Category: 1
+  - Name: XBox Controller
+    Size: 1
+    Colour: 1
+    Category: 1
+  - Name: PlayStation Controller
+    Size: 1
+    Colour: 5
+    Category: 1
+  - Name: Wrench
+    Size: 1
+    Colour: 6
+    Category: 2
+  - Name: Flathead Screwdriver
+    Size: 0
+    Colour: 4
+    Category: 2
+  - Name: Philips Head Screwdriver
+    Size: 1
+    Colour: 3
+    Category: 2
+  - Name: Hammer
+    Size: 1
+    Colour: 6
+    Category: 2
+  - Name: Penguin
+    Size: 1
+    Colour: 2
+    Category: 3
+  - Name: Dreidel
+    Size: 0
+    Colour: 4
+    Category: 3
+  - Name: Pool Triangle
+    Size: 2
+    Colour: 1
+    Category: 3
+  - Name: Binoculars
+    Size: 1
+    Colour: 1
+    Category: 2
