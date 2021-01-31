@@ -20,7 +20,7 @@ public class ClockLogic : MonoBehaviour
     [SerializeField]
     private bool m_startAtRealTime;
     [SerializeField]
-    private float m_runningFractionOfRealtime;
+    private float m_runningRealtimeMultiplier = 1f;
 
     [SerializeField] 
     private Coroutine m_rotateOverTimeCoroutine = null;
@@ -87,11 +87,13 @@ public class ClockLogic : MonoBehaviour
 
     private void Update()
     {
-        float timeScale = 50f;
-        if (m_isRunning && m_rotateOverTimeCoroutine == null)
+        if (m_runningRealtimeMultiplier > float.Epsilon)
         {
-            m_minuteArm.Rotate(new Vector3(0f, 0f, -timeScale * Time.deltaTime));
-            m_hourArm.Rotate(new Vector3(0f, 0f, (-timeScale / 12f) * Time.deltaTime));
+            if (m_isRunning && m_rotateOverTimeCoroutine == null)
+            {
+                m_minuteArm.Rotate(new Vector3(0f, 0f, (-m_runningRealtimeMultiplier / 60f) * Time.deltaTime));
+                m_hourArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier / 12f) / 60f) * Time.deltaTime));
+            }
         }
     }
 }

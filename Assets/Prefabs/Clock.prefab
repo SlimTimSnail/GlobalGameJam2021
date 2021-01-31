@@ -395,7 +395,7 @@ MonoBehaviour:
   m_minuteArm: {fileID: 1235027635540043432}
   m_isRunning: 1
   m_startAtRealTime: 1
-  m_runningFractionOfRealtime: 1
+  m_runningRealtimeMultiplier: 1
 --- !u!1 &1235027635540043433
 GameObject:
   m_ObjectHideFlags: 0
