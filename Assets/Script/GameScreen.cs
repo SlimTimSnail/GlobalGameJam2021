@@ -30,6 +30,7 @@ public class GameScreen : MonoBehaviour
     private void Start()
     {
         LostObjects = ObjectLoader.LostObjects;
+        ObjectVideo.waitForFirstFrame = true;
 
         Reset();
     }
@@ -137,7 +138,8 @@ public class GameScreen : MonoBehaviour
 
         if (ObjectVideo != null)
         {
-            ObjectVideo.Stop();
+			ObjectVideo.Stop();
+            ObjectVideo.targetTexture.Release();
             ObjectVideo.gameObject.SetActive(false);
         }
     }
