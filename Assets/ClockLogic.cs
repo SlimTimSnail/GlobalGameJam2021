@@ -19,7 +19,7 @@ public class ClockLogic : MonoBehaviour
     private Transform m_secondArm;
     private Transform m_destinationSecondArm;
     [SerializeField]
-    private bool _m_secondArmTickMovement;
+    private bool m_secondTickMovement;
 
     [SerializeField]
     private bool m_isRunning;
@@ -58,9 +58,13 @@ public class ClockLogic : MonoBehaviour
 
     public void SetTime(int hours, int minutes, int seconds = 0)
     {
-        m_hourArm.localEulerAngles = new Vector3(0f, 0f, -30f * (hours + (minutes / 60f) + (seconds / 3600f)));
-        m_minuteArm.localEulerAngles = new Vector3(0f, 0f, -6f * (minutes + (seconds / 60f)));
-        m_secondArm.localEulerAngles = new Vector3(0f, 0f, -6f * seconds);
+        m_destinationHourArm.localEulerAngles = new Vector3(0f, 0f, -30f * (hours + (minutes / 60f) + (seconds / 3600f)));
+        m_destinationMinuteArm.localEulerAngles = new Vector3(0f, 0f, -6f * (minutes + (seconds / 60f)));
+        m_destinationSecondArm.localEulerAngles = new Vector3(0f, 0f, -6f * seconds);
+
+        m_hourArm.localEulerAngles = m_destinationHourArm.localEulerAngles;
+        m_minuteArm.localEulerAngles = m_destinationMinuteArm.localEulerAngles;
+        m_secondArm.localEulerAngles = m_destinationSecondArm.localEulerAngles;
     }
 
     public void RotateToTime(float secondsToTake, int hours, int minutes, int seconds = 0)
@@ -92,9 +96,9 @@ public class ClockLogic : MonoBehaviour
             secondsElapsed += Time.deltaTime;
         }
 
-        m_destinationHourArm.localEulerAngles = Vector3.zero;
-        m_destinationMinuteArm.localEulerAngles = Vector3.zero;
-        m_destinationSecondArm.localEulerAngles = Vector3.zero;
+        m_destinationHourArm.localEulerAngles = m_hourArm.localEulerAngles;
+        m_destinationMinuteArm.localEulerAngles = m_minuteArm.localEulerAngles;
+        m_destinationSecondArm.localEulerAngles = m_secondArm.localEulerAngles;
         m_rotateOverTimeCoroutine = null;
     }
 
@@ -104,9 +108,23 @@ public class ClockLogic : MonoBehaviour
         {
             if (m_isRunning && m_rotateOverTimeCoroutine == null)
             {
-                m_hourArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier * 30f) / 3600f) * Time.deltaTime));
-                m_minuteArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier * 6f) / 60f) * Time.deltaTime));
-                m_secondArm.Rotate(new Vector3(0f, 0f, (-m_runningRealtimeMultiplier * 6f) * Time.deltaTime));
+                m_destinationHourArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier * 30f) / 3600f) * Time.deltaTime));
+                m_destinationMinuteArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier * 6f) / 60f) * Time.deltaTime));
+                m_destinationSecondArm.Rotate(new Vector3(0f, 0f, (-m_runningRealtimeMultiplier * 6f) * Time.deltaTime));
+
+                m_hourArm.localEulerAngles = m_destinationHourArm.localEulerAngles;
+                m_minuteArm.localEulerAngles = m_destinationMinuteArm.localEulerAngles;
+                if (m_secondTickMovement)
+                {
+                    m_secondArm.localEulerAngles = new Vector3(
+                        m_destinationSecondArm.localEulerAngles.x, 
+                        m_destinationSecondArm.localEulerAngles.y, 
+                        (int)(m_destinationSecondArm.localEulerAngles.z / 6f) * 6);
+                }
+                else
+                {
+                    m_secondArm.localEulerAngles = m_destinationSecondArm.localEulerAngles;
+                }
             }
         }
     }
