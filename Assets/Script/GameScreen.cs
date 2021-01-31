@@ -7,6 +7,9 @@ using UnityEngine.Video;
 
 public class GameScreen : MonoBehaviour
 {
+    public int NumberOfRounds = 3;
+    private int NumberOfItemsReturned = 0;
+
 	public VideoPlayer ObjectVideo = null;
     public VideoPlayer LoserVideo = null;
 
@@ -106,7 +109,7 @@ public class GameScreen : MonoBehaviour
 
     public void SubmitObject()
     {
-        m_clockLogic.RunningRealtimeMultipler *= 0.95f;
+        m_clockLogic.RunningRealtimeMultipler *= 1.2f;
 
         if (CurrentSelected.correctObject)
         {
@@ -119,7 +122,9 @@ public class GameScreen : MonoBehaviour
             LostObjects.Remove(correctObj);
             Destroy(correctObj.gameObject);
 
-            if (LostObjects.Count == 0)
+            NumberOfItemsReturned++;
+
+            if (NumberOfItemsReturned == NumberOfRounds)
 			{
                 StartCoroutine(GoToEndCoroutine());
 			}
