@@ -1616,6 +1616,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1235027634345247812}
     m_Modifications:
+    - target: {fileID: 731404453842426342, guid: 87cde85eabf786b469858271de2d26b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 731404453842426342, guid: 87cde85eabf786b469858271de2d26b8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 731404453842426342, guid: 87cde85eabf786b469858271de2d26b8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.225
+      objectReference: {fileID: 0}
     - target: {fileID: 731404454014918278, guid: 87cde85eabf786b469858271de2d26b8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1820,6 +1832,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1235027634345247812}
     m_Modifications:
+    - target: {fileID: 469652256848833509, guid: ff0b099e0dd125b4c9c93e09a138c1d2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 469652256848833509, guid: ff0b099e0dd125b4c9c93e09a138c1d2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 469652256848833509, guid: ff0b099e0dd125b4c9c93e09a138c1d2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 469652257088433284, guid: ff0b099e0dd125b4c9c93e09a138c1d2, type: 3}
       propertyPath: m_Name
       value: Hour_Arm
@@ -1922,6 +1946,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1235027634345247812}
     m_Modifications:
+    - target: {fileID: 2735501955215843759, guid: 4188fb5dcbb36944c97816ad50d722bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735501955215843759, guid: 4188fb5dcbb36944c97816ad50d722bd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735501955215843759, guid: 4188fb5dcbb36944c97816ad50d722bd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2735501955397773006, guid: 4188fb5dcbb36944c97816ad50d722bd, type: 3}
       propertyPath: m_Name
       value: Minute_Arm
