@@ -23,7 +23,8 @@ public class LostObjectDefinitions : ScriptableObject, IEnumerable<LostObjectDef
 		Green,
 		Yellow,
 		Pink,
-		Silver
+		Silver,
+        Brown
 	}
 
 	public enum Category
@@ -31,7 +32,8 @@ public class LostObjectDefinitions : ScriptableObject, IEnumerable<LostObjectDef
 		Food,
 		Electronic,
 		Tool,
-		Toy
+		Toy,
+        Clothes
 	}
 
 	[Serializable]
