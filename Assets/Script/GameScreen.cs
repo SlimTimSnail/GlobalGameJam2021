@@ -10,7 +10,9 @@ public class GameScreen : MonoBehaviour
     public int NumberOfRounds = 3;
     private int NumberOfItemsReturned = 0;
 
-	public VideoPlayer ObjectVideo = null;
+    [SerializeField]
+    private Transform m_objectVideoPanel;
+    public VideoPlayer ObjectVideo = null;
     public VideoPlayer LoserVideo = null;
 
     public LoadObjectsFromDefinitions ObjectLoader = null;
@@ -120,7 +122,7 @@ public class GameScreen : MonoBehaviour
         if (ObjectVideo != null)
 		{
             ObjectVideo.clip = CurrentSelected.Definition.VideoClip;
-            ObjectVideo.gameObject.SetActive(true);
+            m_objectVideoPanel.gameObject.SetActive(true);
             ObjectVideo.Play();
         }
     }
@@ -159,7 +161,7 @@ public class GameScreen : MonoBehaviour
         {
 			ObjectVideo.Stop();
             ObjectVideo.targetTexture.Release();
-            ObjectVideo.gameObject.SetActive(false);
+            m_objectVideoPanel.gameObject.SetActive(false);
         }
     }
 
