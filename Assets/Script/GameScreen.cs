@@ -7,7 +7,7 @@ using UnityEngine.Video;
 
 public class GameScreen : MonoBehaviour
 {
-    public int NumberOfRounds = 3;
+    public int NumberOfRounds = 2;
     private int NumberOfItemsReturned = 0;
 
     [SerializeField]
