@@ -166,7 +166,9 @@ MonoBehaviour:
   - {fileID: 1386435820}
   SubmitButton: {fileID: 836776150}
   ReturnButton: {fileID: 710655832}
-  Loser: {fileID: 11400000, guid: 24facb22499d047af9a1d69cf8fd91ea, type: 2}
+  LoserDefinitions:
+  - {fileID: 11400000, guid: 24facb22499d047af9a1d69cf8fd91ea, type: 2}
+  - {fileID: 11400000, guid: e4610409c7428fd468faedecd11e9c23, type: 2}
 --- !u!114 &8440092
 MonoBehaviour:
   m_ObjectHideFlags: 0

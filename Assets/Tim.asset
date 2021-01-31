@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ad1b30fad684220a6bd22108b151ed, type: 3}
+  m_Name: Tim
+  m_EditorClassIdentifier: 
+  Intro: {fileID: 32900000, guid: 555502d86be504f519f4c852856dc0ec, type: 3}
+  Outro: {fileID: 32900000, guid: 1e0a874da9f8b4131b19e46c87bfc405, type: 3}
+  Repeat: {fileID: 32900000, guid: e25196deaaed942b2ab7bb0918215ab4, type: 3}
+  Idle_01: {fileID: 32900000, guid: fef50bac427d34b36aa90d197a1630ee, type: 3}
+  Idle_02: {fileID: 32900000, guid: 289a504994ce646d48dfb8162a987d0f, type: 3}
+  Idle_03: {fileID: 32900000, guid: e03fb3605778845aebd504ecbaa46d0d, type: 3}
+  TooBig: {fileID: 32900000, guid: 6aa3254e0c778491a9b91c66727bf46a, type: 3}
+  TooSmall: {fileID: 32900000, guid: 110f1625e237e4f13ac825afa7e015b1, type: 3}
+  ColourClips:
+  - {fileID: 32900000, guid: cffd3ad0c677a472ea9df5b147f0896c, type: 3}
+  - {fileID: 32900000, guid: f7a7fa0a32dbb41538ac9e9018a22929, type: 3}
+  - {fileID: 32900000, guid: 81513a71ee8394e22a55562fe55f143c, type: 3}
+  - {fileID: 32900000, guid: a73d93a0810034427bd012195a6eedb9, type: 3}
+  - {fileID: 32900000, guid: 628ebf3f847ea429cafe6a787a143734, type: 3}
+  - {fileID: 32900000, guid: 031ea406c6b794e88a4c9a554bed1af4, type: 3}
+  - {fileID: 32900000, guid: 0b843940da3f646289bf17fb142e0734, type: 3}
+  - {fileID: 32900000, guid: 717cb53cb34534cfc82ffde4d3156365, type: 3}
+  CategoryClips:
+  - {fileID: 32900000, guid: e13fff4915557481a881f306269c57d8, type: 3}
+  - {fileID: 32900000, guid: 83615ba1c5cb3421fa3326b428d8322a, type: 3}
+  - {fileID: 32900000, guid: d20e54a33888748808ab17bf017235ed, type: 3}
+  - {fileID: 32900000, guid: fc382773df1d041e9ae12c95de38da35, type: 3}
+  - {fileID: 32900000, guid: 8b165ae1b9a484c9289254e3e1cdb31c, type: 3}

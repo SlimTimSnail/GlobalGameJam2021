@@ -17,7 +17,8 @@ public class GameScreen : MonoBehaviour
     public Button SubmitButton = null;
     public Button ReturnButton = null;
 
-    public LoserDefinition Loser = null;
+    public List<LoserDefinition> LoserDefinitions = null;
+    private LoserDefinition CurrentLoser = null;
 
     public static GameScreen Instance;
 
@@ -40,12 +41,15 @@ public class GameScreen : MonoBehaviour
             lo.WasSubmitted = false;
 		}
 
-        int rand = Random.Range(0, LostObjects.Count);
+        int rand = Random.Range(0, LoserDefinitions.Count);
+        CurrentLoser = LoserDefinitions[rand];
+
+        rand = Random.Range(0, LostObjects.Count);
         LostObjects[rand].correctObject = true;
 
         if(LoserVideo != null)
         {
-            LoserVideo.clip = Loser.Intro;
+            LoserVideo.clip = CurrentLoser.Intro;
             LoserVideo.gameObject.SetActive(true);
             LoserVideo.Play();
             LoserVideo.loopPointReached += PlayIdle;
@@ -101,7 +105,7 @@ public class GameScreen : MonoBehaviour
         if(CurrentSelected.correctObject)
         {
             Debug.Log("Win");
-            LoserVideo.clip = Loser.Outro;
+            LoserVideo.clip = CurrentLoser.Outro;
             LoserVideo.Play();
 
             LostObject correctObj = CurrentSelected;
@@ -144,15 +148,15 @@ public class GameScreen : MonoBehaviour
         switch(rand)
         {
             case 0:
-                LoserVideo.clip = Loser.Idle_01;
+                LoserVideo.clip = CurrentLoser.Idle_01;
                 LoserVideo.Play();
                 break;
             case 1:
-                LoserVideo.clip = Loser.Idle_02;
+                LoserVideo.clip = CurrentLoser.Idle_02;
                 LoserVideo.Play();
                 break;
             case 2:
-                LoserVideo.clip = Loser.Idle_03;
+                LoserVideo.clip = CurrentLoser.Idle_03;
                 LoserVideo.Play();
                 break;
         }
@@ -163,7 +167,7 @@ public class GameScreen : MonoBehaviour
         if (CurrentSelected.WasSubmitted)
         {
             Debug.Log("I said Nope");
-            LoserVideo.clip = Loser.Repeat;
+            LoserVideo.clip = CurrentLoser.Repeat;
         }
         else
         {
@@ -233,18 +237,18 @@ public class GameScreen : MonoBehaviour
                 case "size":
                     if (currentDef.Size > correctDef.Size)
 					{
-                        LoserVideo.clip = Loser.TooBig;
+                        LoserVideo.clip = CurrentLoser.TooBig;
 					}
                     else
 					{
-                        LoserVideo.clip = Loser.TooSmall;
+                        LoserVideo.clip = CurrentLoser.TooSmall;
 					}
                     break;
                 case "colour":
-                    LoserVideo.clip = Loser.ColourClips[(int)currentDef.Colour];
+                    LoserVideo.clip = CurrentLoser.ColourClips[(int)currentDef.Colour];
                     break;
                 case "category":
-                    LoserVideo.clip = Loser.CategoryClips[(int)currentDef.Category];
+                    LoserVideo.clip = CurrentLoser.CategoryClips[(int)currentDef.Category];
                     break;
             }
 
