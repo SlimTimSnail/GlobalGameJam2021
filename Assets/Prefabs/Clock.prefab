@@ -188,7 +188,7 @@ MonoBehaviour:
   m_hourArm: {fileID: 5886132628485784160}
   m_minuteArm: {fileID: 9151149688865423416}
   m_secondArm: {fileID: 6477762025048526486}
-  m_secondTickMovement: 0
+  m_secondTickMovement: 1
   _m_secondTickSound: {fileID: 8300000, guid: 1b15162a78d5ca545a8d5eee7d15da76, type: 3}
   m_isRunning: 1
   m_startAtRealTime: 1
@@ -355,8 +355,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.25
+  m_Pitch: 0.75
   Loop: 0
   Mute: 0
   Spatialize: 0
