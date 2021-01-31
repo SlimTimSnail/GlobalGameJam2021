@@ -20,6 +20,8 @@ public class ClockLogic : MonoBehaviour
     private Transform m_destinationSecondArm;
     [SerializeField]
     private bool m_secondTickMovement;
+    [SerializeField]
+    private AudioClip _m_secondTickSound;
 
     [SerializeField]
     private bool m_isRunning;
@@ -27,6 +29,9 @@ public class ClockLogic : MonoBehaviour
     private bool m_startAtRealTime;
     [SerializeField]
     private float m_runningRealtimeMultiplier = 1f;
+
+    [SerializeField]
+    private AudioSource m_clockAudio;
 
     [SerializeField] 
     private Coroutine m_rotateOverTimeCoroutine = null;
@@ -102,6 +107,7 @@ public class ClockLogic : MonoBehaviour
         m_rotateOverTimeCoroutine = null;
     }
 
+    private float? m_lastSecondRotationZ;
     private void Update()
     {
         if (m_runningRealtimeMultiplier > float.Epsilon)
@@ -116,10 +122,17 @@ public class ClockLogic : MonoBehaviour
                 m_minuteArm.localEulerAngles = m_destinationMinuteArm.localEulerAngles;
                 if (m_secondTickMovement)
                 {
+                    m_lastSecondRotationZ = m_secondArm.localEulerAngles.z;
+
                     m_secondArm.localEulerAngles = new Vector3(
                         m_destinationSecondArm.localEulerAngles.x, 
                         m_destinationSecondArm.localEulerAngles.y, 
                         (int)(m_destinationSecondArm.localEulerAngles.z / 6f) * 6);
+
+                    if (m_lastSecondRotationZ.HasValue && !Mathf.Approximately(m_secondArm.localEulerAngles.z, m_lastSecondRotationZ.Value))
+                    {
+                        m_clockAudio.PlayOneShot(_m_secondTickSound);
+                    }
                 }
                 else
                 {
