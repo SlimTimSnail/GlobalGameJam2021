@@ -877,6 +877,10 @@ PrefabInstance:
       propertyPath: m_clockLogic
       value: 
       objectReference: {fileID: 1061037362}
+    - target: {fileID: 194688947953487498, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
+      propertyPath: NumberOfRounds
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 194688947953487499, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
       propertyPath: m_Name
       value: ObjectsCanvas
