@@ -773,6 +773,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoserCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4899886915163788654, guid: 9cc343a1b2c03d64692c61d0fdfe9bf7, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899886915163788654, guid: 9cc343a1b2c03d64692c61d0fdfe9bf7, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899886915163788654, guid: 9cc343a1b2c03d64692c61d0fdfe9bf7, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899886915163788654, guid: 9cc343a1b2c03d64692c61d0fdfe9bf7, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc343a1b2c03d64692c61d0fdfe9bf7, type: 3}
 --- !u!1 &1872473587
@@ -884,6 +900,22 @@ PrefabInstance:
     - target: {fileID: 194688947953487499, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
       propertyPath: m_Name
       value: ObjectsCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 194688947953487500, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194688947953487500, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 194688947953487500, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 194688947953487500, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 194688947953487502, guid: 055ca4b85a5a07c4bbe4398fa591d389, type: 3}
       propertyPath: m_Pivot.x
