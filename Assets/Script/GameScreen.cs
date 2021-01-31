@@ -40,11 +40,12 @@ public class GameScreen : MonoBehaviour
     {
         LostObjects = ObjectLoader.LostObjects;
         ObjectVideo.waitForFirstFrame = true;
+        LoserVideo.loopPointReached += OnLoserVideoEnd;
 
-        Reset();
+        Refresh();
     }
 
-	private void Reset()
+	private void Refresh()
 	{
         foreach(LostObject lo in LostObjects)
 		{
@@ -79,7 +80,6 @@ public class GameScreen : MonoBehaviour
             LoserVideo.clip = CurrentLoser.Intro;
             LoserVideo.gameObject.SetActive(true);
             LoserVideo.Play();
-            LoserVideo.loopPointReached += OnLoserVideoEnd;
         }
     }
 
@@ -175,7 +175,7 @@ public class GameScreen : MonoBehaviour
             }
             else
             {
-                Reset();
+                Refresh();
             }
         }
         else
