@@ -29,6 +29,11 @@ public class ClockLogic : MonoBehaviour
     private bool m_startAtRealTime;
     [SerializeField]
     private float m_runningRealtimeMultiplier = 1f;
+    public float RunningRealtimeMultipler { get => m_runningRealtimeMultiplier; set => SetRealtimeMultiplier(value); }
+    private void SetRealtimeMultiplier(float value)
+    {
+        m_runningRealtimeMultiplier = value;
+    }
 
     [SerializeField]
     private AudioSource m_clockAudio;

@@ -20,6 +20,9 @@ public class GameScreen : MonoBehaviour
     public List<LoserDefinition> LoserDefinitions = null;
     private LoserDefinition CurrentLoser = null;
 
+    [SerializeField]
+    private ClockLogic m_clockLogic;
+
     public static GameScreen Instance;
 
     private void Awake()
@@ -102,7 +105,9 @@ public class GameScreen : MonoBehaviour
 
     public void SubmitObject()
     {
-        if(CurrentSelected.correctObject)
+        m_clockLogic.RunningRealtimeMultipler *= 0.95f;
+
+        if (CurrentSelected.correctObject)
         {
             Debug.Log("Win");
             LoserVideo.clip = CurrentLoser.Outro;

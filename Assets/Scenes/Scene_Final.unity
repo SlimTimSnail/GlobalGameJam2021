@@ -169,6 +169,7 @@ MonoBehaviour:
   LoserDefinitions:
   - {fileID: 11400000, guid: 24facb22499d047af9a1d69cf8fd91ea, type: 2}
   - {fileID: 11400000, guid: e4610409c7428fd468faedecd11e9c23, type: 2}
+  m_clockLogic: {fileID: 1061037362}
 --- !u!114 &8440092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3659,6 +3660,17 @@ MonoBehaviour:
   m_submitted: 0
   m_button: {fileID: 998552176}
   m_image: {fileID: 803502393}
+--- !u!114 &1061037362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1746735065689950277, guid: 15c886cc24afa97478ba458aae8a27e2, type: 3}
+  m_PrefabInstance: {fileID: 1565603618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eed0b639f088ef45a179d90d8fb54ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1094188058
 PrefabInstance:
   m_ObjectHideFlags: 0
