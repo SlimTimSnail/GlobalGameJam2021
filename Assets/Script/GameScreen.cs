@@ -7,6 +7,9 @@ using UnityEngine.Video;
 
 public class GameScreen : MonoBehaviour
 {
+    [SerializeField]
+    private Transform m_objectVideoPanel;
+
 	public VideoPlayer ObjectVideo = null;
     public VideoPlayer LoserVideo = null;
 
@@ -117,7 +120,7 @@ public class GameScreen : MonoBehaviour
         if (ObjectVideo != null)
 		{
             ObjectVideo.clip = CurrentSelected.Definition.VideoClip;
-            ObjectVideo.gameObject.SetActive(true);
+            m_objectVideoPanel.gameObject.SetActive(true);
             ObjectVideo.Play();
         }
     }
@@ -163,7 +166,7 @@ public class GameScreen : MonoBehaviour
         {
 			ObjectVideo.Stop();
             ObjectVideo.targetTexture.Release();
-            ObjectVideo.gameObject.SetActive(false);
+            m_objectVideoPanel.gameObject.SetActive(false);
         }
     }
 
