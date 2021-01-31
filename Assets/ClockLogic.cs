@@ -49,7 +49,7 @@ public class ClockLogic : MonoBehaviour
 
     public void SetTime(int hours, int minutes)
     {
-        m_hourArm.localEulerAngles = new Vector3(0f, 0f, -30f * hours);
+        m_hourArm.localEulerAngles = new Vector3(0f, 0f, -30f * (hours + (minutes / 60f)));
 
         m_minuteArm.localEulerAngles = new Vector3(0f, 0f, -6f * minutes);
     }
@@ -87,9 +87,11 @@ public class ClockLogic : MonoBehaviour
 
     private void Update()
     {
+        float timeScale = 50f;
         if (m_isRunning && m_rotateOverTimeCoroutine == null)
         {
-            m_minuteArm.Rotate(new Vector3(0f, 0f, 10f * Time.deltaTime));
+            m_minuteArm.Rotate(new Vector3(0f, 0f, -timeScale * Time.deltaTime));
+            m_hourArm.Rotate(new Vector3(0f, 0f, (-timeScale / 12f) * Time.deltaTime));
         }
     }
 }
