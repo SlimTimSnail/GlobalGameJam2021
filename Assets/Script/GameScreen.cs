@@ -22,6 +22,7 @@ public class GameScreen : MonoBehaviour
 
     public List<LoserDefinition> LoserDefinitions = null;
     private LoserDefinition CurrentLoser = null;
+    private int lastLoser = -1;
 
     [SerializeField]
     private ClockLogic m_clockLogic;
@@ -48,8 +49,25 @@ public class GameScreen : MonoBehaviour
             lo.WasSubmitted = false;
 		}
 
-        int rand = Random.Range(0, LoserDefinitions.Count);
+        int count = LoserDefinitions.Count;
+        if (lastLoser >= 0)
+		{
+            count--;
+		}
+
+        int rand = Random.Range(0, count);
+
+        if (rand == lastLoser)
+		{
+            rand++;
+            if (rand >= LoserDefinitions.Count)
+			{
+                rand = 0;
+			}
+		}
+
         CurrentLoser = LoserDefinitions[rand];
+        lastLoser = rand;
 
         rand = Random.Range(0, LostObjects.Count);
         LostObjects[rand].correctObject = true;
