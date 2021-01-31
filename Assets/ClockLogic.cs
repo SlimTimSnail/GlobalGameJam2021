@@ -16,6 +16,10 @@ public class ClockLogic : MonoBehaviour
     private Transform m_destinationMinuteArm;
 
     [SerializeField]
+    private Transform m_secondArm;
+    private Transform m_destinationSecondArm;
+
+    [SerializeField]
     private bool m_isRunning;
     [SerializeField]
     private bool m_startAtRealTime;
@@ -32,6 +36,9 @@ public class ClockLogic : MonoBehaviour
 
         m_destinationMinuteArm = Instantiate(m_minuteArm, m_minuteArm.transform);
         m_destinationMinuteArm.GetComponentInChildren<Renderer>().enabled = false;
+
+        m_destinationSecondArm = Instantiate(m_secondArm, m_secondArm.transform);
+        m_destinationSecondArm.GetComponentInChildren<Renderer>().enabled = false;
     }
 
     private void Start()
