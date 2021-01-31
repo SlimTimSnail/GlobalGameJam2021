@@ -30,6 +30,16 @@ public class GameScreen : MonoBehaviour
     {
         LostObjects = ObjectLoader.LostObjects;
 
+        Reset();
+    }
+
+	private void Reset()
+	{
+        foreach(LostObject lo in LostObjects)
+		{
+            lo.WasSubmitted = false;
+		}
+
         int rand = Random.Range(0, LostObjects.Count);
         LostObjects[rand].correctObject = true;
 
@@ -49,6 +59,22 @@ public class GameScreen : MonoBehaviour
         {
             SceneManager.LoadScene("Scene_End");
         }
+        else if (Input.GetKeyDown(KeyCode.Return))
+		{
+            LostObject correctObject = null;
+
+            for (int i = 0; i < LostObjects.Count; i++)
+			{
+                if (LostObjects[i].correctObject)
+				{
+                    correctObject = LostObjects[i];
+                    break;
+				}
+			}
+
+            OnObjectSelect(correctObject);
+            SubmitObject();
+		}
     }
 
     public void OnObjectSelect(LostObject lostObject)
@@ -72,13 +98,25 @@ public class GameScreen : MonoBehaviour
 
     public void SubmitObject()
     {
-        if(CurrentSelected.correctObject == true)
+        if(CurrentSelected.correctObject)
         {
             Debug.Log("Win");
             LoserVideo.clip = Loser.Outro;
             LoserVideo.Play();
 
-            StartCoroutine(GoToEndCoroutine());
+            LostObject correctObj = CurrentSelected;
+            ReturnObjectToBox();
+            LostObjects.Remove(correctObj);
+            Destroy(correctObj.gameObject);
+
+            if (LostObjects.Count == 0)
+			{
+                StartCoroutine(GoToEndCoroutine());
+			}
+            else
+			{
+                StartCoroutine(NextLevelCoroutine());
+            }
         }
         else
 		{
@@ -225,4 +263,15 @@ public class GameScreen : MonoBehaviour
         }
         SceneManager.LoadScene("Scene_End");
     }
+
+    private IEnumerator NextLevelCoroutine()
+	{
+        yield return new WaitForSeconds(0.1f);
+        while (LoserVideo.isPlaying)
+		{
+            yield return null;
+		}
+
+        Reset();
+	}
 }
