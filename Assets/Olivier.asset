@@ -28,8 +28,10 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 8063349590c2f4831bbaf85cc01b7a98, type: 3}
   - {fileID: 32900000, guid: 30bf3c84071344380a9999e203eb9882, type: 3}
   - {fileID: 32900000, guid: c0997c68d97834652b4f3bc2b2880abd, type: 3}
+  - {fileID: 32900000, guid: 68ed060e7f97e4212b5685e2be638aa2, type: 3}
   CategoryClips:
   - {fileID: 32900000, guid: 4f26db8c3201f4fc0b05379235342659, type: 3}
   - {fileID: 32900000, guid: 48fbfd824a33f435ab1beaccdff495d7, type: 3}
   - {fileID: 32900000, guid: d03c83af0d1694c968266110f885c40a, type: 3}
   - {fileID: 32900000, guid: 63e8869cb753e4f5a896f11a08852f0b, type: 3}
+  - {fileID: 32900000, guid: 9912db6119af44f7a9edd9b03cb3b543, type: 3}
