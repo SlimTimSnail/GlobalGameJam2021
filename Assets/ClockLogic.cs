@@ -18,6 +18,8 @@ public class ClockLogic : MonoBehaviour
     [SerializeField]
     private Transform m_secondArm;
     private Transform m_destinationSecondArm;
+    [SerializeField]
+    private bool _m_secondArmTickMovement;
 
     [SerializeField]
     private bool m_isRunning;
@@ -54,29 +56,30 @@ public class ClockLogic : MonoBehaviour
         return new DateTime();
     }
 
-    public void SetTime(int hours, int minutes)
+    public void SetTime(int hours, int minutes, int seconds = 0)
     {
-        m_hourArm.localEulerAngles = new Vector3(0f, 0f, -30f * (hours + (minutes / 60f)));
-
-        m_minuteArm.localEulerAngles = new Vector3(0f, 0f, -6f * minutes);
+        m_hourArm.localEulerAngles = new Vector3(0f, 0f, -30f * (hours + (minutes / 60f) + (seconds / 3600f)));
+        m_minuteArm.localEulerAngles = new Vector3(0f, 0f, -6f * (minutes + (seconds / 60f)));
+        m_secondArm.localEulerAngles = new Vector3(0f, 0f, -6f * seconds);
     }
 
-    public void RotateToTime(int hours, int minutes, float secondsToTake)
+    public void RotateToTime(float secondsToTake, int hours, int minutes, int seconds = 0)
     {
         if (secondsToTake < float.Epsilon)
         {
-            SetTime(hours, minutes);
+            SetTime(hours, minutes, seconds);
         }
         else
         {
-            m_rotateOverTimeCoroutine = StartCoroutine(RotateOverTimeCoroutine(hours, minutes, secondsToTake));
+            m_rotateOverTimeCoroutine = StartCoroutine(RotateOverTimeCoroutine(secondsToTake, hours, minutes, seconds));
         }
     }
 
-    private IEnumerator RotateOverTimeCoroutine(int hours, int minutes, float secondsToTake)
+    private IEnumerator RotateOverTimeCoroutine(float secondsToTake, int hours, int minutes, int seconds)
     {
         m_destinationHourArm.localEulerAngles = new Vector3(0f, 0f, -30f * hours);
         m_destinationMinuteArm.localEulerAngles = new Vector3(0f, 0f, -6f * minutes);
+        m_destinationSecondArm.localEulerAngles = new Vector3(0f, 0f, -6f * seconds);
 
         float secondsElapsed = 0f;
         while (secondsElapsed < secondsToTake)
@@ -84,11 +87,14 @@ public class ClockLogic : MonoBehaviour
             yield return null;
             float timeFraction = secondsElapsed / secondsToTake;
             m_hourArm.rotation = Quaternion.Lerp(m_hourArm.rotation, m_destinationHourArm.rotation, timeFraction);
+            m_minuteArm.rotation = Quaternion.Lerp(m_minuteArm.rotation, m_destinationMinuteArm.rotation, timeFraction);
+            m_secondArm.rotation = Quaternion.Lerp(m_secondArm.rotation, m_destinationSecondArm.rotation, timeFraction);
             secondsElapsed += Time.deltaTime;
         }
 
         m_destinationHourArm.localEulerAngles = Vector3.zero;
         m_destinationMinuteArm.localEulerAngles = Vector3.zero;
+        m_destinationSecondArm.localEulerAngles = Vector3.zero;
         m_rotateOverTimeCoroutine = null;
     }
 
@@ -98,8 +104,9 @@ public class ClockLogic : MonoBehaviour
         {
             if (m_isRunning && m_rotateOverTimeCoroutine == null)
             {
-                m_minuteArm.Rotate(new Vector3(0f, 0f, (-m_runningRealtimeMultiplier / 60f) * Time.deltaTime));
-                m_hourArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier / 12f) / 60f) * Time.deltaTime));
+                m_hourArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier * 30f) / 3600f) * Time.deltaTime));
+                m_minuteArm.Rotate(new Vector3(0f, 0f, ((-m_runningRealtimeMultiplier * 6f) / 60f) * Time.deltaTime));
+                m_secondArm.Rotate(new Vector3(0f, 0f, (-m_runningRealtimeMultiplier * 6f) * Time.deltaTime));
             }
         }
     }
