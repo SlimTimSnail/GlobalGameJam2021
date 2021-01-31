@@ -77,7 +77,7 @@ public class GameScreen : MonoBehaviour
             LoserVideo.clip = CurrentLoser.Intro;
             LoserVideo.gameObject.SetActive(true);
             LoserVideo.Play();
-            LoserVideo.loopPointReached += PlayIdle;
+            LoserVideo.loopPointReached += OnLoserVideoEnd;
         }
     }
 
@@ -141,15 +141,6 @@ public class GameScreen : MonoBehaviour
             Destroy(correctObj.gameObject);
 
             NumberOfItemsReturned++;
-
-            if (NumberOfItemsReturned == NumberOfRounds)
-			{
-                StartCoroutine(GoToEndCoroutine());
-			}
-            else
-			{
-                StartCoroutine(NextLevelCoroutine());
-            }
         }
         else
 		{
@@ -172,7 +163,26 @@ public class GameScreen : MonoBehaviour
         }
     }
 
-    public void PlayIdle(VideoPlayer vp)
+    public void OnLoserVideoEnd(VideoPlayer vp)
+	{
+        if (vp.clip == CurrentLoser.Outro)
+		{
+            if (NumberOfItemsReturned == NumberOfRounds)
+            {
+                GoToEnd();
+            }
+            else
+            {
+                Reset();
+            }
+        }
+        else
+		{
+            PlayIdle();
+		}
+	}
+
+    public void PlayIdle()
     {
         int rand = Random.Range(0, 3);
         switch(rand)
@@ -288,24 +298,8 @@ public class GameScreen : MonoBehaviour
         }
     }
 
-    private IEnumerator GoToEndCoroutine()
+    private void GoToEnd()
     {
-        yield return new WaitForSeconds(0.1f);
-        while (LoserVideo.isPlaying)
-        {
-            yield return null;
-        }
         SceneManager.LoadScene("Scene_End");
     }
-
-    private IEnumerator NextLevelCoroutine()
-	{
-        yield return new WaitForSeconds(0.1f);
-        while (LoserVideo.isPlaying)
-		{
-            yield return null;
-		}
-
-        Reset();
-	}
 }
